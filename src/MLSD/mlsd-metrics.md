@@ -93,7 +93,7 @@ These offline metrics are commonly used in search, information retrieval, and re
   - Recommendation Systems: CTR is used to measure how effectively recommended items attract user clicks.
 - Search Engines: CTR is used to evaluate the quality of search results. High CTR for a search result indicates that it was relevant to the user's query.
 
-* Conversion Rate: Conversion Rate measures the percentage of users who take a specific desired action after interacting with an item, such as making a purchase, signing up for a newsletter, or filling out a form. It helps assess the effectiveness of a call to action.
+* Conversion Rate: Conversion Rate measures the percentage of users who take a specific desired action after interacting with an item, such as making a purchase, signing up for a newsletter, or filling out a form. It helps assess the effectiveness of a call to action. (engagement rate와 비슷한데, conversion rate는 "얼마나 많은 유저가"를 측정하고, engagement rate는 "얼마나 많은 활동을" 측정함. )
 
 * Bounce Rate: Bounce Rate calculates the percentage of users who visit a webpage or view an item but leave without taking any further action, such as navigating to another page or interacting with additional content. A high bounce rate may indicate that users are not finding the content engaging.
 
