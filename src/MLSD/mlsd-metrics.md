@@ -16,11 +16,19 @@ These offline metrics are commonly used in search, information retrieval, and re
   - Definition: MRR measures the effectiveness of a system in ranking the most relevant items at the top of a list. It calculates the average of reciprocal ranks of the first correct item found in each ranked list of results: 
   MRR = 1/m \Sum(1/rank_i)
   - Use Case: MRR is often used in search and recommendation systems to assess how quickly users find relevant content. It's particularly useful when there is only one correct answer or when the order of results matters.
+  - Reciprocal Rank: 검색엔진의 예에서, 검색 결과들이 순서대로 보여진다고 하자. 이 중에, 실제로 관련있는 링크가 몇번째로 나열되었는지를 측정하는것. 예를들어, 리스트 중에 실제 관련된 링크가 첫번째로 나왔다면, reciprocal rank는 1/1에서 1이다. N번째로 나왔다면, 1/N이 될것.
+  - Mean Reciprocal Rank (MRR): 여러번의 검색 결과에서 얻은 reciprocal rank들을 그냥 평균한것. 
+
+### Average Precision for single query
+  - 현재 추천된 리스트가 있다고 할 때, 실제 관련있는 아이템들의 위치에서 precision을 계산하여 평균한것. 주어진 리스트가 [1, 1, 0, 0, 1, 0, 0] 이라고 하자. 1은 실제 관련이 있는 아이템, 0은 실제로는 관련이 없는 아이템임. 이때, 첫 아이템부터 끝 아이템까지, 1인 값에서만 precision을 계산하여 평균함.
+  - At index 0 (value 1), precision = 1/1. At index 1 (value 1), precision = 2/2. At index 3 (value 0), precision = 2/3 ...
+  - 이것은 전체 추천 리스트 중에 몇개가 실제 관련있는지를 측정하는 동시에, 추천의 순서도 측정하게 됨. 관련된 아이템이 높은 순서에 배치되어 있다면, 더 높은 average precision을 가지게 됨. l1=[1, 1, 1, 0, 0, 0], l2=[0, 0, 0, 1, 1, 1]의 예를 생각 해 보면, 뒷쪽의 index에서는 precision이 비슷할것이다 (둘 다 3/6). 그런데, 앞쪽의 아이템에서는 l1의 경우엔 1, 1, 1, 3/4, 3/5, 3/6이고, l2의 경우엔 0, 0, 0, 1/4, 2/5, 3/6이 되어서, 이들의 평균을 비교하면 l1이 더 큰 값을 가지게 됨. 
+
 
 ### Mean Average Precision (mAP):
-
   - Definition: mAP computes the average precision across multiple queries or users. Precision is calculated for each query, and the mean of these precisions is taken to provide a single performance score.
-  - Use Case: mAP is valuable in scenarios where there are multiple users or queries, and you want to assess the overall quality of recommendations or search results across a diverse set of queries. mAP works well for binary relevances. For continues scores, we use nDCG. 
+  - Use Case: mAP is valuable in scenarios where there are multiple users or queries, and you want to assess the overall quality of recommendations or search results across a diverse set of queries. mAP works well for binary relevances. For continues scores, we use nDCG.
+  - 
 
 ### Discounted Cumulative Gain (DCG):
   - Definition: Discounted Cumulative Gain (DCG) is a widely used evaluation metric primarily applied in the fields of information retrieval, search engines, and recommendation systems.
