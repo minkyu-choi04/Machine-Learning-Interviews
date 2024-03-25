@@ -61,7 +61,7 @@ These offline metrics are commonly used in search, information retrieval, and re
     - y is the true class label (0 or 1 for binary, one-hot encoded vector for multi-class).
     - p is the predicted probability assigned to the true class label.
     - The negative sign ensures that the loss is minimized when the predicted probabilities match the true labels. (the lower the better)
-- NCE: CE(ML model) / CE(simple baseline)
+- NCE: 1 - CE(ML model) / CE(simple baseline such as random guessing). CE(model)은 작을수록 좋고 CE(baseline)은 model보다 크다. 그래서 NCE가 1에 가까울수록 모델이 잘 되는것, 0에 가까울수록 잘 안되는것으로 해석 가능. (CE 값은 항상 양수임. log(p)는 항상 0보다 작은데, 앞에 -가 붙어있으니. )
 
 ### Ranking:
 * Precision @k and Recall @k not a good fit (not consider ranking quality of out) 
@@ -69,7 +69,11 @@ These offline metrics are commonly used in search, information retrieval, and re
   * MRR: focus on rank of 1st relevant item 
   * nDCG: relevance b/w user and item is non-binary 
   * mAP: relevance is binary 
-* Ads ranking: NCE 
+* Ads ranking: NCE. Model prediction on whether the ads will be clicked or not is compared to the actual click-through rate (CTR). 
+
+
+
+
   
 # Online metrics 
 * CTR 
