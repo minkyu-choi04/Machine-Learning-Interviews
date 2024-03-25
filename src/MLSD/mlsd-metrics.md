@@ -28,7 +28,7 @@ These offline metrics are commonly used in search, information retrieval, and re
 ### Mean Average Precision (mAP):
   - Definition: mAP computes the average precision across multiple queries or users. Precision is calculated for each query, and the mean of these precisions is taken to provide a single performance score.
   - Use Case: mAP is valuable in scenarios where there are multiple users or queries, and you want to assess the overall quality of recommendations or search results across a diverse set of queries. mAP works well for binary relevances. For continues scores, we use nDCG.
-  - 
+  - mAP는 binary label에 대해서 사용. 아래의 DCG는 varying score에 대해서 사용.
 
 ### Discounted Cumulative Gain (DCG):
   - Definition: Discounted Cumulative Gain (DCG) is a widely used evaluation metric primarily applied in the fields of information retrieval, search engines, and recommendation systems.
@@ -40,6 +40,8 @@ These offline metrics are commonly used in search, information retrieval, and re
   - Use case: 
     - DCG is employed to evaluate how effectively a system ranks and presents relevant items to users.
     - It is instrumental in optimizing search and recommendation algorithms, ensuring that highly relevant items are positioned at the top of the list for user engagement and satisfaction.
+    - 예를들어, relavance score가 다음과 같이 주어졌다고 하면, [8, 5, 3, 2, 1], DGC는 8f(0)+5f(1)+3f(2)+2f(3)+1f(4)로 계산됨. 여기서 f()는 discount function.
+    - nDCG는 normalized DCG임. 이것은 nDCG = DCG/iDCG로 계산됨. iDCG는 ideal DCG로, 주어진 score list를 sorting해서 계산함. 만약, score list가 이미 decresing order로 되어있다면, DCG와 iDCG는 동일할것임. 
 
 ### Normalized Discounted Cumulative Gain (nDCG):
 
