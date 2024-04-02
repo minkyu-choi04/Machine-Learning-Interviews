@@ -17,7 +17,7 @@
 * Goal: monitor posts, detect harmful content, and demote/remove 
 * Examples harmful content categories: violence, nudity, hate speech 
 * ML objective: predict if a post is harmful 
-  * Input: Post (MM: text, image, video) 
+  * Input: Post (MultiModal: text, image, video) 
   * Output:  P(harmful) or P(violent), P(nude), P(hate), etc
 * ML Category: Multimodal (Multi-label) classification 
 * Data: 500M posts / day (about 10K annotated)
@@ -29,7 +29,11 @@
 - Offline 
   - F1 score, PR-AUC, ROC-AUC 
 - Online 
-  - prevalence (percentage of harmful posts didn't prevent over all posts), harmful impressions, percentage of valid (reversed) appeals, proactive rate (ratio of system detected over system + user detected) 
+  - prevalence (percentage of harmful posts didn't prevent over all posts), harmful impressions, percentage of valid (reversed) appeals, proactive rate (ratio of system detected over system + user detected)
+  - Prevalence: Percentege of harmful posts that were not prevented over all posts.
+  - Harmful Impressions: The number of user views of harmful contents before they are blocked.
+  - Percentage of Valid Appeals: block 된 아이템 중에서, 작성자가 re-evaluation을 신청한 횟수를 N이라고 하자. 이 중, n개의 아이템이 un-block으로 바뀌었을 때, n/N.
+  - Proactive Ratio: system detected / (system detected + user detected)
 
 ### 3. Architectural Components  
 * Multimodal input (text, image, video, etc): 
