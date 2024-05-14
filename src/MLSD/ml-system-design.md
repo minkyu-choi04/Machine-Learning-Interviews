@@ -85,7 +85,9 @@ Note: Remember when using this design flow during an interview to be flexible. A
   - Retrieval and ranking metrics
     - Precision@k, Recall@k (do not consider ranking quality)
     - mAP, MRR, nDCG
-  - Regression metrics: MSE, MAE, 
+  - Regression metrics: MSE (Mean Square Error), MAE (Mean Absolute Error),
+    - MAE: Robust to outlier, interpretability (MAE is in the same unit of the data), Non-differentiable, All loss values are penalized equal.
+    - MSE: Sensitive to outlier, differentiable, Penalize larger loss more, small loss less.
   - Problem specific metrics
     - Language: BLEU, BLEURT, GLUE, ROUGE, etc 
     - ads: CPE, etc  
