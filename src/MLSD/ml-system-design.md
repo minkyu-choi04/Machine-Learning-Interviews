@@ -78,8 +78,11 @@ Note: Remember when using this design flow during an interview to be flexible. A
 
 ## 2. Metrics (Offline and Online)
 
-Offline: Model 학습시에 사용하는 것
-Online: user-model interaction시에 model performance 측정할 때 사용
+- Offline: 여러 sample이 있어야 계산 가능한것. 
+- Online: user-model interaction시에 model performance 측정할 때 사용
+- Metric에서 loss와 model evaluation을 위한것을 구분할것.
+  - Recall / precision 등등은 evaluation을 위한것이고,
+  - loss는 CE, MSE 등등을 이용하여 계산됨 for training. 
 
 - Offline metrics (e.g. classification, relevance metrics)  
   - Classification metrics
