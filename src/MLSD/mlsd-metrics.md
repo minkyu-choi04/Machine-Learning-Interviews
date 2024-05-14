@@ -64,7 +64,7 @@ These offline metrics are commonly used in search, information retrieval, and re
 - NCE: 1 - CE(ML model) / CE(simple baseline such as random guessing). CE(model)은 작을수록 좋고 CE(baseline)은 model보다 크다. 그래서 NCE가 1에 가까울수록 모델이 잘 되는것, 0에 가까울수록 잘 안되는것으로 해석 가능. (CE 값은 항상 양수임. log(p)는 항상 0보다 작은데, 앞에 -가 붙어있으니. )
 
 ### Ranking:
-* Precision @k and Recall @k not a good fit (not consider ranking quality of out) 
+* Precision @k and Recall @k not a good fit (not consider ranking quality of out) (meaningful for retrieval or candidate generation)
 * MRR, mAP, and nDCG good: 
   * MRR: focus on rank of 1st relevant item 
   * nDCG: relevance b/w user and item is non-binary 
