@@ -180,6 +180,7 @@ Online: user-model interaction시에 model performance 측정할 때 사용
     - how to generate/learn?
     - pre-compute and store
   - Encoding categorical features (one hot, ordinal, count, etc)
+    - ordinal: preserve orders of the data (https://chat.openai.com/share/0f24d6c8-d519-497d-aca6-d591245f76b8)
   - Positional embeddings
   - Scaling/Normalization (for numerical features)
 - Preprocessing features 
