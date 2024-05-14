@@ -148,6 +148,7 @@
   * Two options:
     * Pointwise LTR model: <user, item> -> relevance score 
       * approximate it as a binary classification problem p(relevant)
+      * Binary classification이기는 한데, output이 probability로 나와서 ranking에 이용될 수 있는듯. 
     * Pairwise LTR model: <user, item1, item2> -> item1 score > item2 score ?
       * loss function if the predicted order is correct 
       * more natural to ranking, more complicated 
@@ -155,7 +156,7 @@
     * 100k items (focus on recall) -> 500 items (focus on precision) -> 500 items in correct order   
     * Stage 1: We use a pointwise LTR -> binary classifier 
       * latency: microseconds 
-      * suggestion: LR or small MART (multiple additive regression trees)
+      * suggestion: Logistic Regression or small MART (multiple additive regression trees)
       * use ROC AUC for metric
     * Stage 2: Pairwise LTR model 
       * Two options (choose based on train data availability and capacity):
