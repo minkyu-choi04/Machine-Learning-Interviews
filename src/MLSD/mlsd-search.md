@@ -72,7 +72,9 @@
   * item reviews 
   * item category 
 * inverted index: 
-  * index DS, mapping from words into their locations in a set of documents (e.g. ABC -> documents 1, 7)
+  * index Data Structure, mapping from words into their locations in a set of documents (e.g. ABC -> documents 1, 7)
+  * It is called "inverted" index because 보통의 관계에서는 document가 word를 포함하는데, 여기서는 반대로 특정한 word를 포함하는 document들을 찾아서 indexing 해 두기 때문임.
+  * 특정 단어를 포함하는 document를 찾는것은 매우 많은 시간이 걸리는 작업이나, inverted index를 한번 만들어 두면, 특정 단어를 포함하든 문서들을 쉽게 찾을 수 있음. --> scalability와 연결됨. 
 * after query expansion (e.g. black pants into black and pants or suit-pants or trousers etc), do a search in inverted index db and find relevant items with relevance score 
 * relevance score 
   * weighted linear combination of: 
@@ -80,7 +82,8 @@
     * item popularity (e.g. no of reviews, or bought) (e.g. w=0.125), 
     * intent match score (e.g. 0.125/2), 
     * domain match score,  
-    * personalization score (e.g. age, gender, location, interests) 
+    * personalization score (e.g. age, gender, location, interests)
+* 정리하자면, retrival에서는 inverted index에 기반하여, 주어진 query와 모든 문서들간의 relevance를 계산하고, 이것이 높은 Top-N개의 문서들을 찾아내는것이다.
 
 #### Ranking: 
 * see the next sections. 
