@@ -90,8 +90,8 @@ We follow  the three stage recommender system (funnel architecture) in order to 
    Candidate generation --> Ranking --> Re-ranking
 ```
 
-In the first stage, we use a light model to retrive thousands of items from millions
-In the second (ranking) stage, we focus on high precision using a powerful model. This will not impact serving speed much because it's only run on smaller subset of items. 
+- In the first stage, we use a light model to retrive thousands of items from millions (focus on Recall).
+- In the second (ranking) stage, we focus on high precision using a powerful model. This will not impact serving speed much because it's only run on smaller subset of items. 
 
 Candidate generation in practice comes from aggregation of different candidate generation models. Here we can assume three candidate generation modules: 
 
