@@ -78,6 +78,9 @@ Note: Remember when using this design flow during an interview to be flexible. A
 
 ## 2. Metrics (Offline and Online)
 
+Offline: Model 학습시에 사용하는 것
+Online: user-model interaction시에 model performance 측정할 때 사용
+
 - Offline metrics (e.g. classification, relevance metrics)  
   - Classification metrics
     - Precision, Recall, F1, ROC AUC, P/R AUC, mAP, log-loss, etc
