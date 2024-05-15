@@ -97,6 +97,7 @@
 * Feature preprocessing 
   - one hot (gender)
   - bucketize + one hot (age, distance, time)
+    - 연속적인 변수인 나이를 discrete bucket 0~10, 10~20, 20~30...으로 나누고 one-hot vector로 표기하는것. 
 
 * feature processing 
   * Batch (for static) vs Online (streaming, for dynamic) processing 
