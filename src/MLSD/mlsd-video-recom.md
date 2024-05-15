@@ -194,10 +194,11 @@ training
 For candidate generation 1 (Relevance Based), we choose CF. 
 
 For CF there are two embedding based modeling options: 
-1. Matrix Factorization 
+1. Matrix Factorization
+   * 단순히 수학적으로 계산하는게 아니라 optimization을 거쳐야 함. 원본 데이터 R (U x N)이 있을 때, User matrix P, item matrix Q를 이용하여 R을 근사하는것임. R = P*Q. 
    * Pros: Training speed (only two matrices to learn), Serving speed (static learned embeddings)
    * Cons: only relies on user-item interactions (No user profile info e.g. language is used); new-user cold start problem 
-2. Two tower neural network:
+3. Two tower neural network:
    * Pros: Accepts user features (user profile + user search history) -> better quality recommendation; handles new users 
    * Cons: Expensive training, serving speed     
 
